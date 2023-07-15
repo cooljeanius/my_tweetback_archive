@@ -4,30 +4,18 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>cooljeanius’s Twitter Archive</title>
-		<meta name="description" content="A read-only indieweb self-hosted archive of cooljeanius’s tweets." />
-		<script>
-		if("classList" in document.documentElement) {
-			document.documentElement.classList.add("has-js");
-		}
-		</script>
+		<meta name="description" content="A read-only indieweb self-hosted archive of cooljeanius’s tweets.">
 
-		
-			<link rel="stylesheet" href="/assets/chartist.min.css">
-			<link rel="stylesheet" href="/assets/chart.css">
-			<script src="/assets/chartist.min.js"></script>
-			<script src="/assets/chart.js"></script>
-			<link rel="profile" href="http://microformats.org/profile/hatom">
-			
-
-		<link rel="stylesheet" href="/assets/style.css">
-		<script src="/assets/script.js" type="module"></script>
-		<script src="/assets/is-land.js" type="module"></script>
+		<link rel="profile" href="https://microformats.org/profile/hatom">
+		<link rel="stylesheet" href="/_site/assets/style.css">
+		<script src="/_site/assets/script.js" type="module"></script>
+		<script src="/_site/assets/is-land.js" type="module"></script>
 
 		
 	</head>
 	<body>
 		<header>
-			<h1 class="tweets-title"><a href="/"><img src="undefined/img/avatar.jpeg" width="52" height="52" alt="cooljeanius’s avatar" class="tweet-avatar">cooljeanius’s Twitter Archive</a></h1>
+			<h1 class="tweets-title"><a href="/_site/"><img src="undefined/img/avatar.jpeg" width="52" height="52" alt="cooljeanius’s avatar" class="tweet-avatar">cooljeanius’s Twitter Archive</a></h1>
 			<ul class="tweets-nav">
 				<li><a rel="home" href="https://cooljeanius.github.io/tweetback/">← cooljeanius.github.io</a></li>
 			</ul>
@@ -39,46 +27,41 @@
 			<span class="tweets-primary-count-num">57,425</span> tweets
 		</h2>
 
-		<div class="js">
-			<h2>Search Tweets:</h2>
-			<div class="tweets-search">
-				<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
-				<script src="/_pagefind/pagefind-ui.js" type="text/javascript"></script>
-				<div id="search" class="tweets-search"></div>
-				<script>new PagefindUI({ element: "#search" });</script>
-			</div>
-		</div>
+		<is-land on:visible="" on:save-data="false">
+			<template data-island="">
+				<h2>Search Tweets:</h2>
+				<div class="tweets-search">
+					<div id="search" class="tweets-search"></div>
+					<link href="/_site/_pagefind/pagefind-ui.css" rel="stylesheet">
+					<script src="/_site/_pagefind/pagefind-ui.js" onload="new PagefindUI({ element: '#search', showImages: false });"></script>
+				</div>
+			</template>
+		</is-land>
 
 		<div>
-			<h2><a href="/recent/">Recent:</a></h2>
-			<div class="twtr-sentiment twtr-sentiment-max js">
-				<div class="twtr-sentiment-chart ct-chart"></div>
-				<div class="twtr-sentiment-label">
-					⬅️ New
-					<span>⬆️ 🙂<br>⬇️ 🙁</span>
-				</div>
-			</div>
+			<h2><a href="/_site/recent/">Recent:</a></h2>
+
 			<ol class="tweets tweets-linear-list h-feed hfeed" id="tweets-recent-home">
 				<li id="1591446961621766154" class="tweet h-entry" data-pagefind-index-attrs="id">
 		
-			<div class="tweet-text e-content">Hey stop wasting your heads of lettuce on those “can X last longer than a head of lettuce?” challenges; there are shortages: <a href="https://twitter.com/CBC/status/1591445716496433152" class="tweet-username"data-pagefind-index-attrs="href">CBC/1591445716496433152</a></div>
+			<div class="tweet-text e-content">Hey stop wasting your heads of lettuce on those “can X last longer than a head of lettuce?” challenges; there are shortages: <a href="https://twitter.com/CBC/status/1591445716496433152" class="tweet-username" data-pagefind-index-attrs="href">@CBC/1591445716496433152</a></div>
 			<span class="tweet-metadata">
-				<a href="/1591446961621766154/" class="tag tag-naked">Permalink</a>
+				<a href="/_site/1591446961621766154/" class="tag tag-naked">Permalink</a>
 				<a href="https://twitter.com/cooljeanius/status/1591446961621766154" class="tag tag-icon u-url" data-pagefind-index-attrs="href"><span class="sr-only">On twitter.com </span><img src="https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Ftwitter.com%2F/" alt="Twitter logo" width="27" height="27"></a>
 				
-				<a href="/" class="tag tag-naked tag-lite tag-avatar"><img src="undefined/img/avatar.jpeg" width="52" height="52" alt="cooljeanius’s avatar" class="tweet-avatar"></a>
+				<a href="/_site/" class="tag tag-naked tag-lite tag-avatar"><img src="undefined/img/avatar.jpeg" width="52" height="52" alt="cooljeanius’s avatar" class="tweet-avatar"></a>
 				
 				<time class="tag tag-naked tag-lite dt-published" datetime="2022-11-12T15:04:57.000Z">2022 Nov 12</time>
 				<span class="tag tag-naked tag-lite sr-only">Mood <strong class="tweet-sentiment">-5</strong> 🙁</span>
 			</span>
 		</li><li id="1591117775334178816" class="tweet h-entry" data-pagefind-index-attrs="id">
 		
-			<div class="tweet-text e-content">Reminder that if there’s an “h” in the last name, they’re of no relation to me. I have never smashed a watermelon, nor have any of my family members. <a href="https://twitter.com/nypost/status/1591103726437027843" class="tweet-username"data-pagefind-index-attrs="href">nypost/1591103726437027843</a></div>
+			<div class="tweet-text e-content">Reminder that if there’s an “h” in the last name, they’re of no relation to me. I have never smashed a watermelon, nor have any of my family members. <a href="https://twitter.com/nypost/status/1591103726437027843" class="tweet-username" data-pagefind-index-attrs="href">@nypost/1591103726437027843</a></div>
 			<span class="tweet-metadata">
-				<a href="/1591117775334178816/" class="tag tag-naked">Permalink</a>
+				<a href="/_site/1591117775334178816/" class="tag tag-naked">Permalink</a>
 				<a href="https://twitter.com/cooljeanius/status/1591117775334178816" class="tag tag-icon u-url" data-pagefind-index-attrs="href"><span class="sr-only">On twitter.com </span><img src="https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Ftwitter.com%2F/" alt="Twitter logo" width="27" height="27"></a>
 				
-				<a href="/" class="tag tag-naked tag-lite tag-avatar"><img src="undefined/img/avatar.jpeg" width="52" height="52" alt="cooljeanius’s avatar" class="tweet-avatar"></a>
+				<a href="/_site/" class="tag tag-naked tag-lite tag-avatar"><img src="undefined/img/avatar.jpeg" width="52" height="52" alt="cooljeanius’s avatar" class="tweet-avatar"></a>
 				
 				<time class="tag tag-naked tag-lite dt-published" datetime="2022-11-11T17:16:53.000Z">2022 Nov 11</time>
 				<span class="tag tag-naked tag-lite sr-only">Mood <strong class="tweet-sentiment">-1</strong> 🙁</span>
@@ -87,34 +70,34 @@
 		
 			<div class="tweet-text e-content">How are Ash Ketchum and a Peeping Tom similar? Because they both have a Pikachu</div>
 			<span class="tweet-metadata">
-				<a href="/1591073983323312128/" class="tag tag-naked">Permalink</a>
+				<a href="/_site/1591073983323312128/" class="tag tag-naked">Permalink</a>
 				<a href="https://twitter.com/cooljeanius/status/1591073983323312128" class="tag tag-icon u-url" data-pagefind-index-attrs="href"><span class="sr-only">On twitter.com </span><img src="https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Ftwitter.com%2F/" alt="Twitter logo" width="27" height="27"></a>
 				
-				<a href="/" class="tag tag-naked tag-lite tag-avatar"><img src="undefined/img/avatar.jpeg" width="52" height="52" alt="cooljeanius’s avatar" class="tweet-avatar"></a>
+				<a href="/_site/" class="tag tag-naked tag-lite tag-avatar"><img src="undefined/img/avatar.jpeg" width="52" height="52" alt="cooljeanius’s avatar" class="tweet-avatar"></a>
 				
 				<time class="tag tag-naked tag-lite dt-published" datetime="2022-11-11T14:22:53.000Z">2022 Nov 11</time>
 				<span class="tag tag-naked tag-lite sr-only">Mood <strong class="tweet-sentiment">0</strong></span>
 			</span>
 		</li><li id="1590926985265844225" class="tweet h-entry" data-pagefind-index-attrs="id">
 		
-			<div class="tweet-text e-content">lol it's funny scrolling through the replies to this and noticing just how sharp the divide is between people who get what he's saying here, and people who don't: <a href="https://twitter.com/stanveuger/status/1590901920008634368" class="tweet-username"data-pagefind-index-attrs="href">stanveuger/1590901920008634368</a></div>
+			<div class="tweet-text e-content">lol it's funny scrolling through the replies to this and noticing just how sharp the divide is between people who get what he's saying here, and people who don't: <a href="https://twitter.com/stanveuger/status/1590901920008634368" class="tweet-username" data-pagefind-index-attrs="href">@stanveuger/1590901920008634368</a></div>
 			<span class="tweet-metadata">
-				<a href="/1590926985265844225/" class="tag tag-naked">Permalink</a>
+				<a href="/_site/1590926985265844225/" class="tag tag-naked">Permalink</a>
 				<a href="https://twitter.com/cooljeanius/status/1590926985265844225" class="tag tag-icon u-url" data-pagefind-index-attrs="href"><span class="sr-only">On twitter.com </span><img src="https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Ftwitter.com%2F/" alt="Twitter logo" width="27" height="27"></a>
 				
-				<a href="/" class="tag tag-naked tag-lite tag-avatar"><img src="undefined/img/avatar.jpeg" width="52" height="52" alt="cooljeanius’s avatar" class="tweet-avatar"></a>
+				<a href="/_site/" class="tag tag-naked tag-lite tag-avatar"><img src="undefined/img/avatar.jpeg" width="52" height="52" alt="cooljeanius’s avatar" class="tweet-avatar"></a>
 				
 				<time class="tag tag-naked tag-lite dt-published" datetime="2022-11-11T04:38:45.000Z">2022 Nov 10</time>
 				<span class="tag tag-naked tag-lite sr-only">Mood +<strong class="tweet-sentiment">7</strong> 🙂</span>
 			</span>
 		</li><li id="1590877664197632000" class="tweet h-entry" data-pagefind-index-attrs="id">
 		
-			<div class="tweet-text e-content">Yes, this would be the fair way to do it, which is exactly how we know that the Republicans will never agree to it: <a href="https://twitter.com/rosemarierung/status/1590875963860348928" class="tweet-username"data-pagefind-index-attrs="href">rosemarierung/1590875963860348928</a></div>
+			<div class="tweet-text e-content">Yes, this would be the fair way to do it, which is exactly how we know that the Republicans will never agree to it: <a href="https://twitter.com/rosemarierung/status/1590875963860348928" class="tweet-username" data-pagefind-index-attrs="href">@rosemarierung/1590875963860348928</a></div>
 			<span class="tweet-metadata">
-				<a href="/1590877664197632000/" class="tag tag-naked">Permalink</a>
+				<a href="/_site/1590877664197632000/" class="tag tag-naked">Permalink</a>
 				<a href="https://twitter.com/cooljeanius/status/1590877664197632000" class="tag tag-icon u-url" data-pagefind-index-attrs="href"><span class="sr-only">On twitter.com </span><img src="https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Ftwitter.com%2F/" alt="Twitter logo" width="27" height="27"></a>
 				
-				<a href="/" class="tag tag-naked tag-lite tag-avatar"><img src="undefined/img/avatar.jpeg" width="52" height="52" alt="cooljeanius’s avatar" class="tweet-avatar"></a>
+				<a href="/_site/" class="tag tag-naked tag-lite tag-avatar"><img src="undefined/img/avatar.jpeg" width="52" height="52" alt="cooljeanius’s avatar" class="tweet-avatar"></a>
 				
 				<time class="tag tag-naked tag-lite dt-published" datetime="2022-11-11T01:22:46.000Z">2022 Nov 10</time>
 				<span class="tag tag-naked tag-lite sr-only">Mood +<strong class="tweet-sentiment">4</strong> 🙂</span>
@@ -123,34 +106,34 @@
 		
 			<div class="tweet-text e-content">Is there anything the national Democratic Party can do to force the New York Democratic Party to clean house?</div>
 			<span class="tweet-metadata">
-				<a href="/1590834511482585089/" class="tag tag-naked">Permalink</a>
+				<a href="/_site/1590834511482585089/" class="tag tag-naked">Permalink</a>
 				<a href="https://twitter.com/cooljeanius/status/1590834511482585089" class="tag tag-icon u-url" data-pagefind-index-attrs="href"><span class="sr-only">On twitter.com </span><img src="https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Ftwitter.com%2F/" alt="Twitter logo" width="27" height="27"></a>
 				
-				<a href="/" class="tag tag-naked tag-lite tag-avatar"><img src="undefined/img/avatar.jpeg" width="52" height="52" alt="cooljeanius’s avatar" class="tweet-avatar"></a>
+				<a href="/_site/" class="tag tag-naked tag-lite tag-avatar"><img src="undefined/img/avatar.jpeg" width="52" height="52" alt="cooljeanius’s avatar" class="tweet-avatar"></a>
 				
 				<time class="tag tag-naked tag-lite dt-published" datetime="2022-11-10T22:31:18.000Z">2022 Nov 10</time>
 				<span class="tag tag-naked tag-lite sr-only">Mood +<strong class="tweet-sentiment">2</strong> 🙂</span>
 			</span>
 		</li><li id="1590825857777426433" class="tweet h-entry" data-pagefind-index-attrs="id">
 		
-			<div class="tweet-text e-content">Congrats to <a href="https://twitter.com/DanaHilliard_NH/" class="tweet-username h-card"><b class="p-nickname">DanaHilliard_NH</b></a> on his presidential appointment to the National Board for Education Sciences! I would have preferred to have him on the Executive Council, but this is a pretty good consolation prize! <a href="https://www.whitehouse.gov/briefing-room/statements-releases/2022/10/27/president-biden-announces-key-appointments-to-boards-and-commissions-12/" class="tweet-url"data-pagefind-index-attrs="href">whitehouse.gov/briefing-room/statements-releases/2022/10/27/president-biden-announces-key-appointments-to-boards-and-commissions-12/</a> #NHPolitics<is-land on:visible><div class="tweet-medias"><template data-island><a href="https://www.whitehouse.gov/briefing-room/statements-releases/2022/10/27/president-biden-announces-key-appointments-to-boards-and-commissions-12/"><img src="https://v1.opengraph.11ty.dev/https%3A%2F%2Fwww.whitehouse.gov%2Fbriefing-room%2Fstatements-releases%2F2022%2F10%2F27%2Fpresident-biden-announces-key-appointments-to-boards-and-commissions-12%2F/small/onerror/" alt="OpenGraph image for whitehouse.gov/briefing-room/statements-releases/2022/10/27/president-biden-announces-key-appointments-to-boards-and-commissions-12/" loading="lazy" decoding="async" width="375" height="197" class="tweet-media tweet-media-og" onerror="this.parentNode.remove()"></a></template></div></is-land></div>
+			<div class="tweet-text e-content">Congrats to <a href="https://twitter.com/DanaHilliard_NH/" class="tweet-username h-card">@<span class="p-nickname">DanaHilliard_NH</span></a> on his presidential appointment to the National Board for Education Sciences! I would have preferred to have him on the Executive Council, but this is a pretty good consolation prize! <a href="https://www.whitehouse.gov/briefing-room/statements-releases/2022/10/27/president-biden-announces-key-appointments-to-boards-and-commissions-12/" class="tweet-url" data-pagefind-index-attrs="href">whitehouse.gov/briefing-room/statements-releases/2022/10/27/president-biden-announces-key-appointments-to-boards-and-commissions-12/</a> #NHPolitics<is-land on:visible=""><div class="tweet-medias"><template data-island=""><a href="https://www.whitehouse.gov/briefing-room/statements-releases/2022/10/27/president-biden-announces-key-appointments-to-boards-and-commissions-12/"><img src="https://v1.opengraph.11ty.dev/https%3A%2F%2Fwww.whitehouse.gov%2Fbriefing-room%2Fstatements-releases%2F2022%2F10%2F27%2Fpresident-biden-announces-key-appointments-to-boards-and-commissions-12%2F/small/onerror/" alt="OpenGraph image for whitehouse.gov/briefing-room/statements-releases/2022/10/27/president-biden-announces-key-appointments-to-boards-and-commissions-12/" loading="lazy" decoding="async" width="375" height="197" class="tweet-media tweet-media-og" onerror="this.parentNode.remove()"></a></template></div></is-land></div>
 			<span class="tweet-metadata">
-				<a href="/1590825857777426433/" class="tag tag-naked">Permalink</a>
+				<a href="/_site/1590825857777426433/" class="tag tag-naked">Permalink</a>
 				<a href="https://twitter.com/cooljeanius/status/1590825857777426433" class="tag tag-icon u-url" data-pagefind-index-attrs="href"><span class="sr-only">On twitter.com </span><img src="https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Ftwitter.com%2F/" alt="Twitter logo" width="27" height="27"></a>
 				
-				<a href="/" class="tag tag-naked tag-lite tag-avatar"><img src="undefined/img/avatar.jpeg" width="52" height="52" alt="cooljeanius’s avatar" class="tweet-avatar"></a>
+				<a href="/_site/" class="tag tag-naked tag-lite tag-avatar"><img src="undefined/img/avatar.jpeg" width="52" height="52" alt="cooljeanius’s avatar" class="tweet-avatar"></a>
 				
 				<time class="tag tag-naked tag-lite dt-published" datetime="2022-11-10T21:56:55.000Z">2022 Nov 10</time>
 				<span class="tag tag-naked tag-lite sr-only">Mood +<strong class="tweet-sentiment">6</strong> 🙂</span>
 			</span>
 		</li><li id="1590303733380186113" class="tweet h-entry" data-pagefind-index-attrs="id">
 		
-			<div class="tweet-text e-content">Feels like an appropriate morning to break this back out: <a href="https://www.youtube.com/watch?v=Wai6OM3YKTk" class="tweet-url"data-pagefind-index-attrs="href">youtube.com/watch?v=Wai6OM3YKTk</a><is-land on:visible><div class="tweet-medias"><template data-island><a href="https://www.youtube.com/watch?v=Wai6OM3YKTk"><img src="https://v1.opengraph.11ty.dev/https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DWai6OM3YKTk/small/onerror/" alt="OpenGraph image for youtube.com/watch?v=Wai6OM3YKTk" loading="lazy" decoding="async" width="375" height="197" class="tweet-media tweet-media-og" onerror="this.parentNode.remove()"></a></template></div></is-land></div>
+			<div class="tweet-text e-content">Feels like an appropriate morning to break this back out: <a href="https://www.youtube.com/watch?v=Wai6OM3YKTk" class="tweet-url" data-pagefind-index-attrs="href">youtube.com/watch?v=Wai6OM3YKTk</a><is-land on:visible=""><div class="tweet-medias"><template data-island=""><a href="https://www.youtube.com/watch?v=Wai6OM3YKTk"><img src="https://v1.opengraph.11ty.dev/https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DWai6OM3YKTk/small/onerror/" alt="OpenGraph image for youtube.com/watch?v=Wai6OM3YKTk" loading="lazy" decoding="async" width="375" height="197" class="tweet-media tweet-media-og" onerror="this.parentNode.remove()"></a></template></div></is-land></div>
 			<span class="tweet-metadata">
-				<a href="/1590303733380186113/" class="tag tag-naked">Permalink</a>
+				<a href="/_site/1590303733380186113/" class="tag tag-naked">Permalink</a>
 				<a href="https://twitter.com/cooljeanius/status/1590303733380186113" class="tag tag-icon u-url" data-pagefind-index-attrs="href"><span class="sr-only">On twitter.com </span><img src="https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Ftwitter.com%2F/" alt="Twitter logo" width="27" height="27"></a>
 				
-				<a href="/" class="tag tag-naked tag-lite tag-avatar"><img src="undefined/img/avatar.jpeg" width="52" height="52" alt="cooljeanius’s avatar" class="tweet-avatar"></a>
+				<a href="/_site/" class="tag tag-naked tag-lite tag-avatar"><img src="undefined/img/avatar.jpeg" width="52" height="52" alt="cooljeanius’s avatar" class="tweet-avatar"></a>
 				
 				<time class="tag tag-naked tag-lite dt-published" datetime="2022-11-09T11:22:11.000Z">2022 Nov 9</time>
 				<span class="tag tag-naked tag-lite sr-only">Mood +<strong class="tweet-sentiment">4</strong> 🙂</span>
@@ -159,22 +142,22 @@
 		
 			<div class="tweet-text e-content">Imagine how much better Dems could have done if we'd cared more about redistricting</div>
 			<span class="tweet-metadata">
-				<a href="/1590241981242175490/" class="tag tag-naked">Permalink</a>
+				<a href="/_site/1590241981242175490/" class="tag tag-naked">Permalink</a>
 				<a href="https://twitter.com/cooljeanius/status/1590241981242175490" class="tag tag-icon u-url" data-pagefind-index-attrs="href"><span class="sr-only">On twitter.com </span><img src="https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Ftwitter.com%2F/" alt="Twitter logo" width="27" height="27"></a>
 				
-				<a href="/" class="tag tag-naked tag-lite tag-avatar"><img src="undefined/img/avatar.jpeg" width="52" height="52" alt="cooljeanius’s avatar" class="tweet-avatar"></a>
+				<a href="/_site/" class="tag tag-naked tag-lite tag-avatar"><img src="undefined/img/avatar.jpeg" width="52" height="52" alt="cooljeanius’s avatar" class="tweet-avatar"></a>
 				
 				<time class="tag tag-naked tag-lite dt-published" datetime="2022-11-09T07:16:48.000Z">2022 Nov 9</time>
 				<span class="tag tag-naked tag-lite sr-only">Mood +<strong class="tweet-sentiment">2</strong> 🙂</span>
 			</span>
 		</li><li id="1590237251107422208" class="tweet h-entry" data-pagefind-index-attrs="id">
 		
-			<div class="tweet-text e-content">#NH01 #NHPolitics <a href="https://twitter.com/nytimes/status/1590236009173815298" class="tweet-username"data-pagefind-index-attrs="href">nytimes/1590236009173815298</a></div>
+			<div class="tweet-text e-content">#NH01 #NHPolitics <a href="https://twitter.com/nytimes/status/1590236009173815298" class="tweet-username" data-pagefind-index-attrs="href">@nytimes/1590236009173815298</a></div>
 			<span class="tweet-metadata">
-				<a href="/1590237251107422208/" class="tag tag-naked">Permalink</a>
+				<a href="/_site/1590237251107422208/" class="tag tag-naked">Permalink</a>
 				<a href="https://twitter.com/cooljeanius/status/1590237251107422208" class="tag tag-icon u-url" data-pagefind-index-attrs="href"><span class="sr-only">On twitter.com </span><img src="https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Ftwitter.com%2F/" alt="Twitter logo" width="27" height="27"></a>
 				
-				<a href="/" class="tag tag-naked tag-lite tag-avatar"><img src="undefined/img/avatar.jpeg" width="52" height="52" alt="cooljeanius’s avatar" class="tweet-avatar"></a>
+				<a href="/_site/" class="tag tag-naked tag-lite tag-avatar"><img src="undefined/img/avatar.jpeg" width="52" height="52" alt="cooljeanius’s avatar" class="tweet-avatar"></a>
 				
 				<time class="tag tag-naked tag-lite dt-published" datetime="2022-11-09T06:58:00.000Z">2022 Nov 9</time>
 				<span class="tag tag-naked tag-lite sr-only">Mood <strong class="tweet-sentiment">0</strong></span>
@@ -183,46 +166,46 @@
 		
 			<div class="tweet-text e-content">dang it I just realized I left my chair at my polling place</div>
 			<span class="tweet-metadata">
-				<a href="/1590212757638774784/" class="tag tag-naked">Permalink</a>
+				<a href="/_site/1590212757638774784/" class="tag tag-naked">Permalink</a>
 				<a href="https://twitter.com/cooljeanius/status/1590212757638774784" class="tag tag-icon u-url" data-pagefind-index-attrs="href"><span class="sr-only">On twitter.com </span><img src="https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Ftwitter.com%2F/" alt="Twitter logo" width="27" height="27"></a>
 				
-				<a href="/" class="tag tag-naked tag-lite tag-avatar"><img src="undefined/img/avatar.jpeg" width="52" height="52" alt="cooljeanius’s avatar" class="tweet-avatar"></a>
+				<a href="/_site/" class="tag tag-naked tag-lite tag-avatar"><img src="undefined/img/avatar.jpeg" width="52" height="52" alt="cooljeanius’s avatar" class="tweet-avatar"></a>
 				
 				<time class="tag tag-naked tag-lite dt-published" datetime="2022-11-09T05:20:40.000Z">2022 Nov 9</time>
 				<span class="tag tag-naked tag-lite sr-only">Mood <strong class="tweet-sentiment">0</strong></span>
 			</span>
 		</li><li id="1590204091023917058" class="tweet h-entry" data-pagefind-index-attrs="id">
 		
-			<div class="tweet-text e-content">LMAO you could tell this was coming <a href="https://twitter.com/RonFilipkowski/status/1590202394348228608" class="tweet-username"data-pagefind-index-attrs="href">RonFilipkowski/1590202394348228608</a></div>
+			<div class="tweet-text e-content">LMAO you could tell this was coming <a href="https://twitter.com/RonFilipkowski/status/1590202394348228608" class="tweet-username" data-pagefind-index-attrs="href">@RonFilipkowski/1590202394348228608</a></div>
 			<span class="tweet-metadata">
-				<a href="/1590204091023917058/" class="tag tag-naked">Permalink</a>
+				<a href="/_site/1590204091023917058/" class="tag tag-naked">Permalink</a>
 				<a href="https://twitter.com/cooljeanius/status/1590204091023917058" class="tag tag-icon u-url" data-pagefind-index-attrs="href"><span class="sr-only">On twitter.com </span><img src="https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Ftwitter.com%2F/" alt="Twitter logo" width="27" height="27"></a>
 				
-				<a href="/" class="tag tag-naked tag-lite tag-avatar"><img src="undefined/img/avatar.jpeg" width="52" height="52" alt="cooljeanius’s avatar" class="tweet-avatar"></a>
+				<a href="/_site/" class="tag tag-naked tag-lite tag-avatar"><img src="undefined/img/avatar.jpeg" width="52" height="52" alt="cooljeanius’s avatar" class="tweet-avatar"></a>
 				
 				<time class="tag tag-naked tag-lite dt-published" datetime="2022-11-09T04:46:14.000Z">2022 Nov 8</time>
 				<span class="tag tag-naked tag-lite sr-only">Mood +<strong class="tweet-sentiment">4</strong> 🙂</span>
 			</span>
 		</li><li id="1590202354779160576" class="tweet h-entry" data-pagefind-index-attrs="id">
 		
-			<div class="tweet-text e-content">I'd just like to note that this is now the SECOND history-making candidate that Dennis Soucy has lost to (the first being <a href="https://twitter.com/WazirNh/" class="tweet-username h-card"><b class="p-nickname">WazirNh</b></a>, who made history with her journey from Afghani refugee to state representative) <a href="https://twitter.com/ErinInTheMorn/status/1590180687629672448" class="tweet-username"data-pagefind-index-attrs="href">ErinInTheMorn/1590180687629672448</a></div>
+			<div class="tweet-text e-content">I'd just like to note that this is now the SECOND history-making candidate that Dennis Soucy has lost to (the first being <a href="https://twitter.com/WazirNh/" class="tweet-username h-card">@<span class="p-nickname">WazirNh</span></a>, who made history with her journey from Afghani refugee to state representative) <a href="https://twitter.com/ErinInTheMorn/status/1590180687629672448" class="tweet-username" data-pagefind-index-attrs="href">@ErinInTheMorn/1590180687629672448</a></div>
 			<span class="tweet-metadata">
-				<a href="/1590202354779160576/" class="tag tag-naked">Permalink</a>
+				<a href="/_site/1590202354779160576/" class="tag tag-naked">Permalink</a>
 				<a href="https://twitter.com/cooljeanius/status/1590202354779160576" class="tag tag-icon u-url" data-pagefind-index-attrs="href"><span class="sr-only">On twitter.com </span><img src="https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Ftwitter.com%2F/" alt="Twitter logo" width="27" height="27"></a>
 				
-				<a href="/" class="tag tag-naked tag-lite tag-avatar"><img src="undefined/img/avatar.jpeg" width="52" height="52" alt="cooljeanius’s avatar" class="tweet-avatar"></a>
+				<a href="/_site/" class="tag tag-naked tag-lite tag-avatar"><img src="undefined/img/avatar.jpeg" width="52" height="52" alt="cooljeanius’s avatar" class="tweet-avatar"></a>
 				
 				<time class="tag tag-naked tag-lite dt-published" datetime="2022-11-09T04:39:20.000Z">2022 Nov 8</time>
 				<span class="tag tag-naked tag-lite sr-only">Mood <strong class="tweet-sentiment">-1</strong> 🙁</span>
 			</span>
 		</li><li id="1590200678676168704" class="tweet h-entry" data-pagefind-index-attrs="id">
 		
-			<div class="tweet-text e-content">So, obviously I'm disappointed that Tom Sherman couldn't beat Sununu, but there *is* bright spot in the #NHGov results: Kelly Haldorson is currently finishing ahead of <a href="https://twitter.com/KarlynBrainstem/" class="tweet-username h-card"><b class="p-nickname">KarlynBrainstem</b></a></div>
+			<div class="tweet-text e-content">So, obviously I'm disappointed that Tom Sherman couldn't beat Sununu, but there *is* bright spot in the #NHGov results: Kelly Haldorson is currently finishing ahead of <a href="https://twitter.com/KarlynBrainstem/" class="tweet-username h-card">@<span class="p-nickname">KarlynBrainstem</span></a></div>
 			<span class="tweet-metadata">
-				<a href="/1590200678676168704/" class="tag tag-naked">Permalink</a>
+				<a href="/_site/1590200678676168704/" class="tag tag-naked">Permalink</a>
 				<a href="https://twitter.com/cooljeanius/status/1590200678676168704" class="tag tag-icon u-url" data-pagefind-index-attrs="href"><span class="sr-only">On twitter.com </span><img src="https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Ftwitter.com%2F/" alt="Twitter logo" width="27" height="27"></a>
 				
-				<a href="/" class="tag tag-naked tag-lite tag-avatar"><img src="undefined/img/avatar.jpeg" width="52" height="52" alt="cooljeanius’s avatar" class="tweet-avatar"></a>
+				<a href="/_site/" class="tag tag-naked tag-lite tag-avatar"><img src="undefined/img/avatar.jpeg" width="52" height="52" alt="cooljeanius’s avatar" class="tweet-avatar"></a>
 				
 				<time class="tag tag-naked tag-lite dt-published" datetime="2022-11-09T04:32:40.000Z">2022 Nov 8</time>
 				<span class="tag tag-naked tag-lite sr-only">Mood <strong class="tweet-sentiment">-1</strong> 🙁</span>
@@ -231,10 +214,10 @@
 		
 			<div class="tweet-text e-content">lol this Bolduc speech is so awkward</div>
 			<span class="tweet-metadata">
-				<a href="/1590197300445741058/" class="tag tag-naked">Permalink</a>
+				<a href="/_site/1590197300445741058/" class="tag tag-naked">Permalink</a>
 				<a href="https://twitter.com/cooljeanius/status/1590197300445741058" class="tag tag-icon u-url" data-pagefind-index-attrs="href"><span class="sr-only">On twitter.com </span><img src="https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Ftwitter.com%2F/" alt="Twitter logo" width="27" height="27"></a>
 				
-				<a href="/" class="tag tag-naked tag-lite tag-avatar"><img src="undefined/img/avatar.jpeg" width="52" height="52" alt="cooljeanius’s avatar" class="tweet-avatar"></a>
+				<a href="/_site/" class="tag tag-naked tag-lite tag-avatar"><img src="undefined/img/avatar.jpeg" width="52" height="52" alt="cooljeanius’s avatar" class="tweet-avatar"></a>
 				
 				<time class="tag tag-naked tag-lite dt-published" datetime="2022-11-09T04:19:15.000Z">2022 Nov 8</time>
 				<span class="tag tag-naked tag-lite sr-only">Mood +<strong class="tweet-sentiment">1</strong> 🙂</span>
@@ -244,16 +227,16 @@
 		</div>
 
 		<div>
-			<h2><a href="/popular/">Popular:</a></h2>
+			<h2><a href="/_site/popular/">Popular:</a></h2>
 			<ol class="tweets tweets-linear-list">
 				<li id="1165759019006464001" class="tweet h-entry is_reply " data-pagefind-index-attrs="id">
 		<a href="https://twitter.com/jonathanvswan/status/1165758260743421957" class="tweet-pretext u-in-reply-to">…in reply to @jonathanvswan</a>
-			<div class="tweet-text e-content"><a href="https://twitter.com/jonathanvswan/" class="tweet-username h-card"><b class="p-nickname">jonathanvswan</b></a> I mean... Florida did have to put out a notice reminding people not to shoot a hurricane with their guns once, so he's just representing his voters</div>
+			<div class="tweet-text e-content"><a href="https://twitter.com/jonathanvswan/" class="tweet-username h-card">@<span class="p-nickname">jonathanvswan</span></a> I mean... Florida did have to put out a notice reminding people not to shoot a hurricane with their guns once, so he's just representing his voters</div>
 			<span class="tweet-metadata">
-				<a href="/1165759019006464001/" class="tag tag-naked">Permalink</a>
+				<a href="/_site/1165759019006464001/" class="tag tag-naked">Permalink</a>
 				<a href="https://twitter.com/cooljeanius/status/1165759019006464001" class="tag tag-icon u-url" data-pagefind-index-attrs="href"><span class="sr-only">On twitter.com </span><img src="https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Ftwitter.com%2F/" alt="Twitter logo" width="27" height="27"></a>
 				
-				<a href="/" class="tag tag-naked tag-lite tag-avatar"><img src="undefined/img/avatar.jpeg" width="52" height="52" alt="cooljeanius’s avatar" class="tweet-avatar"></a>
+				<a href="/_site/" class="tag tag-naked tag-lite tag-avatar"><img src="undefined/img/avatar.jpeg" width="52" height="52" alt="cooljeanius’s avatar" class="tweet-avatar"></a>
 				<span class="tag tag-lite tag-retweet">♻️ 138<span class="sr-only"> Retweets</span></span>
 					<span class="tag tag-lite tag-favorite">❤️ 2,006<span class="sr-only"> Favorites</span></span>
 				<time class="tag tag-naked tag-lite dt-published" datetime="2019-08-25T22:53:03.000Z">2019 Aug 25</time>
@@ -261,12 +244,12 @@
 			</span>
 		</li><li id="1545577072680214530" class="tweet h-entry" data-pagefind-index-attrs="id">
 		
-			<div class="tweet-text e-content">If you are a Democrat running for NH State Rep, post your <a href="https://twitter.com/actblue/" class="tweet-username h-card"><b class="p-nickname">actblue</b></a> link in the replies and I will amplify! Since I’m running unopposed and not fundraising for myself this year, I’m focusing on helping other people’s races instead. #NHPolitics</div>
+			<div class="tweet-text e-content">If you are a Democrat running for NH State Rep, post your <a href="https://twitter.com/actblue/" class="tweet-username h-card">@<span class="p-nickname">actblue</span></a> link in the replies and I will amplify! Since I’m running unopposed and not fundraising for myself this year, I’m focusing on helping other people’s races instead. #NHPolitics</div>
 			<span class="tweet-metadata">
-				<a href="/1545577072680214530/" class="tag tag-naked">Permalink</a>
+				<a href="/_site/1545577072680214530/" class="tag tag-naked">Permalink</a>
 				<a href="https://twitter.com/cooljeanius/status/1545577072680214530" class="tag tag-icon u-url" data-pagefind-index-attrs="href"><span class="sr-only">On twitter.com </span><img src="https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Ftwitter.com%2F/" alt="Twitter logo" width="27" height="27"></a>
 				
-				<a href="/" class="tag tag-naked tag-lite tag-avatar"><img src="undefined/img/avatar.jpeg" width="52" height="52" alt="cooljeanius’s avatar" class="tweet-avatar"></a>
+				<a href="/_site/" class="tag tag-naked tag-lite tag-avatar"><img src="undefined/img/avatar.jpeg" width="52" height="52" alt="cooljeanius’s avatar" class="tweet-avatar"></a>
 				<span class="tag tag-lite tag-retweet">♻️ 66<span class="sr-only"> Retweets</span></span>
 					<span class="tag tag-lite tag-favorite">❤️ 195<span class="sr-only"> Favorites</span></span>
 				<time class="tag tag-naked tag-lite dt-published" datetime="2022-07-09T01:14:24.000Z">2022 Jul 8</time>
@@ -274,12 +257,12 @@
 			</span>
 		</li><li id="1133410453164580864" class="tweet h-entry is_reply " data-pagefind-index-attrs="id">
 		<a href="https://twitter.com/justinamash/status/1133410107461689345" class="tweet-pretext u-in-reply-to">…in reply to @justinamash</a>
-			<div class="tweet-text e-content"><a href="https://twitter.com/justinamash/" class="tweet-username h-card"><b class="p-nickname">justinamash</b></a> Which is why we need to #ImpeachBarr besides just impeaching Trump</div>
+			<div class="tweet-text e-content"><a href="https://twitter.com/justinamash/" class="tweet-username h-card">@<span class="p-nickname">justinamash</span></a> Which is why we need to #ImpeachBarr besides just impeaching Trump</div>
 			<span class="tweet-metadata">
-				<a href="/1133410453164580864/" class="tag tag-naked">Permalink</a>
+				<a href="/_site/1133410453164580864/" class="tag tag-naked">Permalink</a>
 				<a href="https://twitter.com/cooljeanius/status/1133410453164580864" class="tag tag-icon u-url" data-pagefind-index-attrs="href"><span class="sr-only">On twitter.com </span><img src="https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Ftwitter.com%2F/" alt="Twitter logo" width="27" height="27"></a>
 				
-				<a href="/" class="tag tag-naked tag-lite tag-avatar"><img src="undefined/img/avatar.jpeg" width="52" height="52" alt="cooljeanius’s avatar" class="tweet-avatar"></a>
+				<a href="/_site/" class="tag tag-naked tag-lite tag-avatar"><img src="undefined/img/avatar.jpeg" width="52" height="52" alt="cooljeanius’s avatar" class="tweet-avatar"></a>
 				<span class="tag tag-lite tag-retweet">♻️ 64<span class="sr-only"> Retweets</span></span>
 					<span class="tag tag-lite tag-favorite">❤️ 438<span class="sr-only"> Favorites</span></span>
 				<time class="tag tag-naked tag-lite dt-published" datetime="2019-05-28T16:31:24.000Z">2019 May 28</time>
@@ -287,12 +270,12 @@
 			</span>
 		</li><li id="1144649088132165633" class="tweet h-entry" data-pagefind-index-attrs="id">
 		
-			<div class="tweet-text e-content">This is 111.7 Fahrenheit, for fellow Americans: <a href="https://twitter.com/spectatorindex/status/1144582857693650944" class="tweet-username"data-pagefind-index-attrs="href">spectatorindex/1144582857693650944</a></div>
+			<div class="tweet-text e-content">This is 111.7 Fahrenheit, for fellow Americans: <a href="https://twitter.com/spectatorindex/status/1144582857693650944" class="tweet-username" data-pagefind-index-attrs="href">@spectatorindex/1144582857693650944</a></div>
 			<span class="tweet-metadata">
-				<a href="/1144649088132165633/" class="tag tag-naked">Permalink</a>
+				<a href="/_site/1144649088132165633/" class="tag tag-naked">Permalink</a>
 				<a href="https://twitter.com/cooljeanius/status/1144649088132165633" class="tag tag-icon u-url" data-pagefind-index-attrs="href"><span class="sr-only">On twitter.com </span><img src="https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Ftwitter.com%2F/" alt="Twitter logo" width="27" height="27"></a>
 				
-				<a href="/" class="tag tag-naked tag-lite tag-avatar"><img src="undefined/img/avatar.jpeg" width="52" height="52" alt="cooljeanius’s avatar" class="tweet-avatar"></a>
+				<a href="/_site/" class="tag tag-naked tag-lite tag-avatar"><img src="undefined/img/avatar.jpeg" width="52" height="52" alt="cooljeanius’s avatar" class="tweet-avatar"></a>
 				<span class="tag tag-lite tag-retweet">♻️ 63<span class="sr-only"> Retweets</span></span>
 					<span class="tag tag-lite tag-favorite">❤️ 103<span class="sr-only"> Favorites</span></span>
 				<time class="tag tag-naked tag-lite dt-published" datetime="2019-06-28T16:49:43.000Z">2019 Jun 28</time>
@@ -300,12 +283,12 @@
 			</span>
 		</li><li id="1530948822247030786" class="tweet h-entry" data-pagefind-index-attrs="id">
 		
-			<div class="tweet-text e-content">Going to do a thread naming all the NH Legislators on this list, along with the number of far-right groups they’re listed as being in: <a href="https://www.irehr.org/reports/breaching-the-mainstream/appendix-a-legislator-membership-in-far-right-facebook-groups/" class="tweet-url"data-pagefind-index-attrs="href">irehr.org/reports/breaching-the-mainstream/appendix-a-legislator-membership-in-far-right-facebook-groups/</a> #NHPolitics<is-land on:visible><div class="tweet-medias"><template data-island><a href="https://www.irehr.org/reports/breaching-the-mainstream/appendix-a-legislator-membership-in-far-right-facebook-groups/"><img src="https://v1.opengraph.11ty.dev/https%3A%2F%2Fwww.irehr.org%2Freports%2Fbreaching-the-mainstream%2Fappendix-a-legislator-membership-in-far-right-facebook-groups%2F/small/onerror/" alt="OpenGraph image for irehr.org/reports/breaching-the-mainstream/appendix-a-legislator-membership-in-far-right-facebook-groups/" loading="lazy" decoding="async" width="375" height="197" class="tweet-media tweet-media-og" onerror="this.parentNode.remove()"></a></template></div></is-land></div>
+			<div class="tweet-text e-content">Going to do a thread naming all the NH Legislators on this list, along with the number of far-right groups they’re listed as being in: <a href="https://www.irehr.org/reports/breaching-the-mainstream/appendix-a-legislator-membership-in-far-right-facebook-groups/" class="tweet-url" data-pagefind-index-attrs="href">irehr.org/reports/breaching-the-mainstream/appendix-a-legislator-membership-in-far-right-facebook-groups/</a> #NHPolitics<is-land on:visible=""><div class="tweet-medias"><template data-island=""><a href="https://www.irehr.org/reports/breaching-the-mainstream/appendix-a-legislator-membership-in-far-right-facebook-groups/"><img src="https://v1.opengraph.11ty.dev/https%3A%2F%2Fwww.irehr.org%2Freports%2Fbreaching-the-mainstream%2Fappendix-a-legislator-membership-in-far-right-facebook-groups%2F/small/onerror/" alt="OpenGraph image for irehr.org/reports/breaching-the-mainstream/appendix-a-legislator-membership-in-far-right-facebook-groups/" loading="lazy" decoding="async" width="375" height="197" class="tweet-media tweet-media-og" onerror="this.parentNode.remove()"></a></template></div></is-land></div>
 			<span class="tweet-metadata">
-				<a href="/1530948822247030786/" class="tag tag-naked">Permalink</a>
+				<a href="/_site/1530948822247030786/" class="tag tag-naked">Permalink</a>
 				<a href="https://twitter.com/cooljeanius/status/1530948822247030786" class="tag tag-icon u-url" data-pagefind-index-attrs="href"><span class="sr-only">On twitter.com </span><img src="https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Ftwitter.com%2F/" alt="Twitter logo" width="27" height="27"></a>
 				
-				<a href="/" class="tag tag-naked tag-lite tag-avatar"><img src="undefined/img/avatar.jpeg" width="52" height="52" alt="cooljeanius’s avatar" class="tweet-avatar"></a>
+				<a href="/_site/" class="tag tag-naked tag-lite tag-avatar"><img src="undefined/img/avatar.jpeg" width="52" height="52" alt="cooljeanius’s avatar" class="tweet-avatar"></a>
 				<span class="tag tag-lite tag-retweet">♻️ 25<span class="sr-only"> Retweets</span></span>
 					<span class="tag tag-lite tag-favorite">❤️ 43<span class="sr-only"> Favorites</span></span>
 				<time class="tag tag-naked tag-lite dt-published" datetime="2022-05-29T16:26:57.000Z">2022 May 29</time>
@@ -313,12 +296,12 @@
 			</span>
 		</li><li id="1148405771459317760" class="tweet h-entry is_reply " data-pagefind-index-attrs="id">
 		<a href="https://twitter.com/Styve1/status/1148404574870392832" class="tweet-pretext u-in-reply-to">…in reply to @Styve1</a>
-			<div class="tweet-text e-content"><a href="https://twitter.com/Styve1/" class="tweet-username h-card"><b class="p-nickname">Styve1</b></a> <a href="https://twitter.com/peterdaou/" class="tweet-username h-card"><b class="p-nickname">peterdaou</b></a> <a href="https://twitter.com/LindseyBoylan/" class="tweet-username h-card"><b class="p-nickname">LindseyBoylan</b></a> Nadler is chair of the Judiciary Committee which oversees impeachments; he absolutely has the power to approve an impeachment inquiry himself, but he hasn't yet, despite the majority of Dems on his committee supporting one</div>
+			<div class="tweet-text e-content"><a href="https://twitter.com/Styve1/" class="tweet-username h-card">@<span class="p-nickname">Styve1</span></a> <a href="https://twitter.com/peterdaou/" class="tweet-username h-card">@<span class="p-nickname">peterdaou</span></a> <a href="https://twitter.com/LindseyBoylan/" class="tweet-username h-card">@<span class="p-nickname">LindseyBoylan</span></a> Nadler is chair of the Judiciary Committee which oversees impeachments; he absolutely has the power to approve an impeachment inquiry himself, but he hasn't yet, despite the majority of Dems on his committee supporting one</div>
 			<span class="tweet-metadata">
-				<a href="/1148405771459317760/" class="tag tag-naked">Permalink</a>
+				<a href="/_site/1148405771459317760/" class="tag tag-naked">Permalink</a>
 				<a href="https://twitter.com/cooljeanius/status/1148405771459317760" class="tag tag-icon u-url" data-pagefind-index-attrs="href"><span class="sr-only">On twitter.com </span><img src="https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Ftwitter.com%2F/" alt="Twitter logo" width="27" height="27"></a>
 				
-				<a href="/" class="tag tag-naked tag-lite tag-avatar"><img src="undefined/img/avatar.jpeg" width="52" height="52" alt="cooljeanius’s avatar" class="tweet-avatar"></a>
+				<a href="/_site/" class="tag tag-naked tag-lite tag-avatar"><img src="undefined/img/avatar.jpeg" width="52" height="52" alt="cooljeanius’s avatar" class="tweet-avatar"></a>
 				<span class="tag tag-lite tag-retweet">♻️ 24<span class="sr-only"> Retweets</span></span>
 					<span class="tag tag-lite tag-favorite">❤️ 50<span class="sr-only"> Favorites</span></span>
 				<time class="tag tag-naked tag-lite dt-published" datetime="2019-07-09T01:37:26.000Z">2019 Jul 8</time>
@@ -339,7 +322,7 @@
 			<div class="lo-c">
 				<h3>Most Retweeted (Last 12 months)</h3>
 				<ol>
-					<li><a href="https://twitter.com/cooljeanius">cooljeanius</a> 132 retweets</li><li><a href="https://twitter.com/rosemarierung">rosemarierung</a> 33 retweets</li><li><a href="https://twitter.com/cannafeminist">cannafeminist</a> 29 retweets</li><li><a href="https://twitter.com/JdmMeuse">JdmMeuse</a> 23 retweets</li><li><a href="https://twitter.com/cooljeaniusbot">cooljeaniusbot</a> 22 retweets</li><li><a href="https://twitter.com/DebrasATeam">DebrasATeam</a> 18 retweets</li><li><a href="https://twitter.com/RuthLarsonNH">RuthLarsonNH</a> 18 retweets</li><li><a href="https://twitter.com/mcbyrne">mcbyrne</a> 18 retweets</li><li><a href="https://twitter.com/KlandriganUL">KlandriganUL</a> 17 retweets</li><li><a href="https://twitter.com/RepWilhelm">RepWilhelm</a> 15 retweets</li>
+					<li><a href="https://twitter.com/cooljeanius">cooljeanius</a> 65 retweets</li><li><a href="https://twitter.com/rosemarierung">rosemarierung</a> 28 retweets</li><li><a href="https://twitter.com/cannafeminist">cannafeminist</a> 19 retweets</li><li><a href="https://twitter.com/DebrasATeam">DebrasATeam</a> 16 retweets</li><li><a href="https://twitter.com/RuthLarsonNH">RuthLarsonNH</a> 16 retweets</li><li><a href="https://twitter.com/JdmMeuse">JdmMeuse</a> 16 retweets</li><li><a href="https://twitter.com/350nhaction">350nhaction</a> 13 retweets</li><li><a href="https://twitter.com/cooljeaniusbot">cooljeaniusbot</a> 12 retweets</li><li><a href="https://twitter.com/RepWilhelm">RepWilhelm</a> 12 retweets</li><li><a href="https://twitter.com/KCavalaro">KCavalaro</a> 12 retweets</li>
 				</ol>
 			</div>
 		</div>
@@ -356,7 +339,7 @@
 			<div class="lo-c">
 				<h4>Most Replies To (Last 12 months)</h4>
 				<ol>
-					<li><a href="https://twitter.com/GraniteGeek">GraniteGeek</a> 20 replies</li><li><a href="https://twitter.com/whocaresforthi5">whocaresforthi5</a> 16 replies</li><li><a href="https://twitter.com/charles_gaba">charles_gaba</a> 14 replies</li><li><a href="https://twitter.com/Con_Palos">Con_Palos</a> 13 replies</li><li><a href="https://twitter.com/cooljeaniusbot">cooljeaniusbot</a> 12 replies</li>
+					<li><a href="https://twitter.com/GraniteGeek">GraniteGeek</a> 17 replies</li><li><a href="https://twitter.com/charles_gaba">charles_gaba</a> 13 replies</li><li><a href="https://twitter.com/rosemarierung">rosemarierung</a> 8 replies</li><li><a href="https://twitter.com/Con_Palos">Con_Palos</a> 7 replies</li><li><a href="https://twitter.com/norwood270">norwood270</a> 6 replies</li>
 				</ol>
 			</div>
 		</div>
@@ -364,7 +347,7 @@
 
 		<h2 id="links">Most Frequent Sites I’ve Linked To</h2>
 		<h3>94.3% of the links I’ve posted are using the <code>https:</code> protocol  (7,998 of 8,479)</h3>
-		<h3>98.2% of the links I’ve posted in the last 12 months are using the <code>https:</code> protocol  (1,202 of 1,224)</h3>
+		<h3>97.2% of the links I’ve posted in the last 12 months are using the <code>https:</code> protocol  (671 of 690)</h3>
 
 		<div class="lo" style="--lo-stackpoint: 20em">
 			<div class="lo-c">
@@ -400,11 +383,7 @@
 		<p><em>365 swear words on 328 tweets (1.1% of all tweets***)</em></p>
 		<p>***: does not include retweets</p>
 
-		<script>
-		var series = getSentimentsFromList( '#tweets-recent-home' );
-		makeSentimentChart( '.twtr-sentiment-chart', series );
-		</script>
-		<template id="rendered-twitter-link"><a href="/1234567890123456789/">twitter link</a></template>
+		<template id="rendered-twitter-link"><a href="/_site/1234567890123456789/">twitter link</a></template>
 
 		</main>
 		<footer>

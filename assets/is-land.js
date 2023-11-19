@@ -1,70 +1,51 @@
-const islandOnceCache = new Map();
-
 class Island extends HTMLElement {
   static tagName = "is-land";
   static prefix = "is-land--";
   static attr = {
-    autoInitType: "autoinit",
-    import: "import",
     template: "data-island",
     ready: "ready",
     defer: "defer-hydration",
   };
 
+  static onceCache = new Map();
+  static onReady = new Map();
+
   static fallback = {
-    ":not(:defined):not([defer-hydration])": (readyPromise, node, prefix) => {
+    ":not(is-land,:defined,[defer-hydration])": (readyPromise, node, prefix) => {
       // remove from document to prevent web component init
       let cloned = document.createElement(prefix + node.localName);
       for(let attr of node.getAttributeNames()) {
         cloned.setAttribute(attr, node.getAttribute(attr));
       }
-
-      // Declarative Shadow DOM
+    
+      // Declarative Shadow DOM (with polyfill)
       let shadowroot = node.shadowRoot;
       if(!shadowroot) {
-        // polyfill
-        let tmpl = node.querySelector(":scope > template[shadowroot]");
+        let tmpl = node.querySelector(":scope > template:is([shadowrootmode], [shadowroot])");
         if(tmpl) {
-          shadowroot = node.attachShadow({ mode: "open" });
+          let mode = tmpl.getAttribute("shadowrootmode") || tmpl.getAttribute("shadowroot") || "closed";
+          shadowroot = node.attachShadow({ mode }); // default is closed
           shadowroot.appendChild(tmpl.content.cloneNode(true));
         }
       }
-
-      // cheers to https://gist.github.com/developit/45c85e9be01e8c3f1a0ec073d600d01e
+    
+      // Cheers to https://gist.github.com/developit/45c85e9be01e8c3f1a0ec073d600d01e
       if(shadowroot) {
         cloned.attachShadow({ mode: shadowroot.mode }).append(...shadowroot.childNodes);
       }
-
-      // Keep the *same* child nodes, clicking on a details->summary child should keep the state of that child
+    
+      // Keep *same* child nodes to preserve state of children (e.g. details->summary)
       cloned.append(...node.childNodes);
       node.replaceWith(cloned);
-
+    
       return readyPromise.then(() => {
-        // restore children (not cloned), including declarative shadow dom nodes
+        // Restore original children and shadow DOM
         if(cloned.shadowRoot) {
           node.shadowRoot.append(...cloned.shadowRoot.childNodes);
         }
         node.append(...cloned.childNodes);
         cloned.replaceWith(node);
       });
-    }
-  };
-
-  static autoinit = {
-    "petite-vue": function(library) {
-      library.createApp().mount(this);
-    },
-    "vue": function(library) {
-      library.createApp().mount(this);
-    },
-    "svelte": function(mod) {
-      new mod.default({ target: this });
-    },
-    "svelte-ssr": function(mod) {
-      new mod.default({ target: this, hydrate: true });
-    },
-    "preact": function(mod) {
-      mod.default(this);
     }
   }
 
@@ -77,7 +58,7 @@ class Island extends HTMLElement {
     });
   }
 
-  // <is-land> parent nodes (that *have* island conditions)
+  // any parents of `el` that are <is-land> (with conditions)
   static getParents(el, stopAt = false) {
     let nodes = [];
     while(el) {
@@ -95,13 +76,14 @@ class Island extends HTMLElement {
     return nodes;
   }
 
-  static async ready(el) {
-    let parents = Island.getParents(el);
+  static async ready(el, parents) {
+    if(!parents) {
+      parents = Island.getParents(el);
+    }
     if(parents.length === 0) {
       return;
     }
-
-    let imports = await Promise.all(parents.map(el => el.wait()));
+    let imports = await Promise.all(parents.map(p => p.wait()));
     // return innermost module import
     if(imports.length) {
       return imports[0];
@@ -119,13 +101,16 @@ class Island extends HTMLElement {
 
       // with thanks to https://gist.github.com/cowboy/938767
       for(let node of components) {
-        // must be connected, must not be an island
-        if(!node.isConnected || node.localName === Island.tagName) {
+        if(!node.isConnected) {
           continue;
         }
 
-        let p = Island.ready(node);
-        Island.fallback[selector](p, node, Island.prefix);
+        let parents = Island.getParents(node);
+        // must be in a leaf island (not nested deep)
+        if(parents.length === 1) {
+          let p = Island.ready(node, parents);
+          Island.fallback[selector](p, node, Island.prefix);
+        }
       }
     }
   }
@@ -168,12 +153,12 @@ class Island extends HTMLElement {
       } else {
         let html = node.innerHTML;
         if(value === "once" && html) {
-          if(islandOnceCache.has(html)) {
+          if(Island.onceCache.has(html)) {
             node.remove();
             return;
           }
 
-          islandOnceCache.set(html, true);
+          Island.onceCache.set(html, true);
         }
 
         node.replaceWith(node.content);
@@ -200,26 +185,11 @@ class Island extends HTMLElement {
 
     this.replaceTemplates(this.getTemplates());
 
-    let mod;
-    // [dependency="my-component-code.js"]
-    let importScript = this.getAttribute(Island.attr.import);
-    if(importScript) {
-      // we could resolve import maps here manually but you’d still have to use the full URL in your script’s import anyway
-      mod = await import(importScript);
+    for(let fn of Island.onReady.values()) {
+      await fn.call(this, Island);
     }
 
-    if(mod) {
-      // Use `import=""` for when import maps are available e.g. `import="petite-vue"`
-      let fn = Island.autoinit[this.getAttribute(Island.attr.autoInitType) || importScript];
-
-      if(fn) {
-        await fn.call(this, mod);
-      }
-    }
-
-    this.readyResolve({
-      // import: mod
-    });
+    this.readyResolve();
 
     this.setAttribute(Island.attr.ready, "");
 
@@ -271,9 +241,7 @@ class Conditions {
     });
   }
 
-  // TODO make sure this runs after all of the conditions have finished, otherwise it will
-  // finish way before the other lazy loaded promises and will be the same as a noop when
-  // on:interaction or on:visible finishes much later
+  // Warning: on:idle is not very useful with other conditions as it may resolve long before.
   static idle() {
     let onload = new Promise(resolve => {
       if(document.readyState !== "complete") {
@@ -347,7 +315,7 @@ class Conditions {
   static saveData(expects) {
     // return early if API does not exist
     if(!("connection" in navigator) || navigator.connection.saveData === (expects !== "false")) {
-      return Promise.resolve();
+      return;
     }
 
     // dangly promise
@@ -361,6 +329,10 @@ if("customElements" in window) {
   window.Island = Island;
 }
 
-export const component = Island;
+export {
+  Island,
+  Island as component, // Backwards compat only: recommend `Island` export
+};
 
-export const ready = Island.ready;
+// TODO remove in 4.0
+export const ready = Island.ready; // Backwards compat only: recommend `Island` export

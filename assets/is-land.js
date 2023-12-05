@@ -2,50 +2,69 @@ class Island extends HTMLElement {
   static tagName = "is-land";
   static prefix = "is-land--";
   static attr = {
+    autoInitType: "autoinit",
+    import: "import",
     template: "data-island",
     ready: "ready",
     defer: "defer-hydration",
   };
 
   static onceCache = new Map();
-  static onReady = new Map();
 
   static fallback = {
-    ":not(is-land,:defined,[defer-hydration])": (readyPromise, node, prefix) => {
+    ":not(:defined):not([defer-hydration])": (readyPromise, node, prefix) => {
       // remove from document to prevent web component init
       let cloned = document.createElement(prefix + node.localName);
       for(let attr of node.getAttributeNames()) {
         cloned.setAttribute(attr, node.getAttribute(attr));
       }
-    
-      // Declarative Shadow DOM (with polyfill)
+
+      // Declarative Shadow DOM
       let shadowroot = node.shadowRoot;
       if(!shadowroot) {
+        // polyfill
         let tmpl = node.querySelector(":scope > template:is([shadowrootmode], [shadowroot])");
         if(tmpl) {
-          let mode = tmpl.getAttribute("shadowrootmode") || tmpl.getAttribute("shadowroot") || "closed";
-          shadowroot = node.attachShadow({ mode }); // default is closed
+          shadowroot = node.attachShadow({ mode: "open" });
           shadowroot.appendChild(tmpl.content.cloneNode(true));
         }
       }
-    
-      // Cheers to https://gist.github.com/developit/45c85e9be01e8c3f1a0ec073d600d01e
+
+      // cheers to https://gist.github.com/developit/45c85e9be01e8c3f1a0ec073d600d01e
       if(shadowroot) {
         cloned.attachShadow({ mode: shadowroot.mode }).append(...shadowroot.childNodes);
       }
-    
-      // Keep *same* child nodes to preserve state of children (e.g. details->summary)
+
+      // Keep the *same* child nodes, clicking on a details->summary child should keep the state of that child
       cloned.append(...node.childNodes);
       node.replaceWith(cloned);
-    
+
       return readyPromise.then(() => {
-        // Restore original children and shadow DOM
+        // restore children (not cloned), including declarative shadow dom nodes
         if(cloned.shadowRoot) {
           node.shadowRoot.append(...cloned.shadowRoot.childNodes);
         }
         node.append(...cloned.childNodes);
         cloned.replaceWith(node);
       });
+    }
+  };
+
+  static autoinit = {
+    "petite-vue": function(library) {
+      library.createApp().mount(this);
+    },
+    "vue": function(library) {
+      library.createApp().mount(this);
+    },
+    "svelte": function(mod) {
+      new mod.default({ target: this });
+    },
+    "svelte-ssr": function(mod) {
+      new mod.default({ target: this, hydrate: true });
+    },
+    "preact": function(mod) {
+      mod.default(this);
     }
   }
 
@@ -58,7 +77,7 @@ class Island extends HTMLElement {
     });
   }
 
-  // any parents of `el` that are <is-land> (with conditions)
+  // <is-land> parent nodes (that *have* island conditions)
   static getParents(el, stopAt = false) {
     let nodes = [];
     while(el) {
@@ -76,14 +95,13 @@ class Island extends HTMLElement {
     return nodes;
   }
 
-  static async ready(el, parents) {
-    if(!parents) {
-      parents = Island.getParents(el);
-    }
+  static async ready(el) {
+    let parents = Island.getParents(el);
     if(parents.length === 0) {
       return;
     }
-    let imports = await Promise.all(parents.map(p => p.wait()));
+
+    let imports = await Promise.all(parents.map(el => el.wait()));
     // return innermost module import
     if(imports.length) {
       return imports[0];
@@ -101,16 +119,13 @@ class Island extends HTMLElement {
 
       // with thanks to https://gist.github.com/cowboy/938767
       for(let node of components) {
-        if(!node.isConnected) {
+        // must be connected, must not be an island
+        if(!node.isConnected || node.localName === Island.tagName) {
           continue;
         }
 
-        let parents = Island.getParents(node);
-        // must be in a leaf island (not nested deep)
-        if(parents.length === 1) {
-          let p = Island.ready(node, parents);
-          Island.fallback[selector](p, node, Island.prefix);
-        }
+        let p = Island.ready(node);
+        Island.fallback[selector](p, node, Island.prefix);
       }
     }
   }
@@ -185,8 +200,21 @@ class Island extends HTMLElement {
 
     this.replaceTemplates(this.getTemplates());
 
-    for(let fn of Island.onReady.values()) {
-      await fn.call(this, Island);
+    let mod;
+    // [dependency="my-component-code.js"]
+    let importScript = this.getAttribute(Island.attr.import);
+    if(importScript) {
+      // we could resolve import maps here manually but you’d still have to use the full URL in your script’s import anyway
+      mod = await import(importScript);
+    }
+
+    if(mod) {
+      // Use `import=""` for when import maps are available e.g. `import="petite-vue"`
+      let fn = Island.autoinit[this.getAttribute(Island.attr.autoInitType) || importScript];
+
+      if(fn) {
+        await fn.call(this, mod);
+      }
     }
 
     this.readyResolve();
@@ -241,7 +269,9 @@ class Conditions {
     });
   }
 
-  // Warning: on:idle is not very useful with other conditions as it may resolve long before.
+  // This isn’t very useful with other conditions as periods of idle may
+  // happen before other conditions are satisfied. Would be more useful if waited
+  // for all other conditions to finish.
   static idle() {
     let onload = new Promise(resolve => {
       if(document.readyState !== "complete") {
@@ -315,7 +345,7 @@ class Conditions {
   static saveData(expects) {
     // return early if API does not exist
     if(!("connection" in navigator) || navigator.connection.saveData === (expects !== "false")) {
-      return;
+      return Promise.resolve();
     }
 
     // dangly promise
@@ -334,5 +364,4 @@ export {
   Island as component, // Backwards compat only: recommend `Island` export
 };
 
-// TODO remove in 4.0
 export const ready = Island.ready; // Backwards compat only: recommend `Island` export
